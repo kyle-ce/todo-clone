@@ -16,8 +16,8 @@ export const catFactApi = createApi({
       getCatFact: builder.query<CatFact, void>({
         query: ()=> '/fact',
       }),
-      getCatFacts: builder.query<CatFacts, void>({
-        query: ()=> '/facts',
+      getCatFacts: builder.query<CatFacts, number>({
+        query: (max)=> `/facts/?limit=${max}`,
       }),
     }),
   })
